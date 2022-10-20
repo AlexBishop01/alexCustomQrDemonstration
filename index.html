@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcodes to QR Code</title>
+
+    <script src="js/qrcode.js"></script>
+    <script src="create.js"></script>
+    <script>
+        var qrcode = undefined;
+
+        function generateQRCode() {
+            //Collection of variables
+            var text1 = document.getElementById('text1').value;
+
+
+
+            //Final string to send
+            var finalString = text1;
+
+
+
+
+            // Creation of QR Code
+            if (qrcode === undefined) {
+                qrcode = new QRCode(document.getElementById('qrcode'), finalString)
+            } else {
+                qrcode.clear();
+                qrcode.makeCode(finalString);
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <h1>QR Code Generator</h1><br />
+    <input id="text1" type="text" style="width:80%"/><br />
+    <input id="submitButton" type="button" style="width: 20%; margin-left: 550px; margin-top: 15px;" value="Create QR Code" onclick="generateQRCode();">
+
+    <div>
+        <div id="qrcode"></div>
+    </div>
+
+</body>
+
+</html>

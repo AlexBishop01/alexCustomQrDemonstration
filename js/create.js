@@ -1,0 +1,1 @@
+//placeholder file to put create qr code in once I figure out how to put qrcode.js in here.
