@@ -15,13 +15,17 @@
         function generateQRCode() {
             //Collection of variables
             var text1 = document.getElementById('text1').value;
+            var text2 = document.getElementById('text2').value;
+            var text3 = document.getElementById('text3').value;
+            var text4 = document.getElementById('text4').value;
+            var text5 = document.getElementById('text5').value;
 
 
 
             //Final string to send
-            var finalString = text1;
+            var finalString = text1 + text2 + text3 + text4 + text5;
 
-
+            document.getElementById("validationString").innerHTML = finalString;
 
 
             // Creation of QR Code
@@ -37,14 +41,28 @@
 
 
 <body>
-    <h1>QR Code Generator</h1><br />
-    <input id="text1" type="text" style="width:80%"/><br />
-    <input id="submitButton" type="button" style="width: 20%; margin-left: 550px; margin-top: 15px;" value="Create QR Code" onclick="generateQRCode();">
+    <h1 style="text-align: center;">JavaScript QR Code Generator</h1><br />
+    <label>Lineal Feet: </label>
+    <input id="text1" type="text" style="width:40%" /><br /><br />
+    <label>Weight: </label>
+    <input id="text2" type="text" style="width:40%" /><br /><br />
+    <label>MSF: </label>
+    <input id="text3" type="text" style="width:40%" /><br /><br />
+    <label>IP Item #: </label>
+    <input id="text4" type="text" style="width:40%" /><br /><br />
+    <label>Date: </label>
+    <input id="text5" type="text" style="width:40%" /><br /><br />
+
+    <input id="submitButton" type="button" style="width: 20%; margin-left: 550px; margin-top: 15px;"
+        value="Create QR Code" onclick="generateQRCode();">
 
     <div>
         <div id="qrcode"></div>
     </div>
 
+    <div style="text-align: center;">
+        <h1 id="validationString"></h1>
+    </div>
 </body>
 
 </html>
