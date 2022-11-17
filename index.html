@@ -34,12 +34,8 @@
             } else {
                 qrcode.clear();
                 qrcode.makeCode(finalString);
-            }
-        }
 
-        function readQRCode() {
-            var initialString = ''
-            
+            }
         }
 
         function goToReadPage() {
@@ -66,8 +62,8 @@
     <input id="submitButton" type="button" style="width: 20%; margin-left: 550px; margin-top: 15px;"
         value="Create QR Code" onclick="generateQRCode();">
 
-    <input id="readButton" type="button" style="width: 20%; margin-top: 15px;"
-        value="Read QR Code" onclick="goToReadPage();">
+    <input id="readButton" type="button" style="width: 20%; margin-top: 15px;" value="Read QR Code"
+        onclick="goToReadPage();">
 
     <div>
         <div id="qrcode"></div>
