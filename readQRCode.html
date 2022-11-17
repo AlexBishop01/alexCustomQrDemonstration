@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcodes to QR Code</title>
+
+    <script src="js/qrcode.js"></script>
+    <script src="create.js"></script>
+    <script>
+
+        function readQRCode() {
+            var initialString = (document.getElementById('text1').value);
+            var finalString = '';
+            //document.getElementById("validationString").innerHTML = initialString;
+
+            var splitQRCode = initialString.split('|')
+
+            //document.getElementById("validationString").innerHTML = splitQRCode.length;
+
+
+            //Splits the String (QR Code) into an array of each data field
+            for (let i = 0; i < splitQRCode.length; i++) {
+                document.getElementById("validationString").innerHTML += (splitQRCode[i] + '<br>')
+            }
+
+        }
+
+        function goToIndexPage() {
+
+            window.location.href = "index.html"
+        }
+    </script>
+</head>
+
+
+<body>
+    <h1 style="text-align: center;">JavaScript QR Code Generator</h1><br />
+    <label>Scan QR Code: </label>
+    <input id="text1" type="text" style="width:40%" /><br /><br />
+
+    <input id="submitButton" type="button" style="width: 20%; margin-left: 550px; margin-top: 15px;"
+        value="Read QR Code" onclick="readQRCode();">
+    <input id="submitButton" type="button" style="width: 20%; margin-top: 15px;"
+        value="Generate QR Code" onclick="goToIndexPage();">
+
+    <div>
+        <div id="qrcode"></div>
+    </div>
+
+    <div style="text-align: center;">
+        <h1 id="validationString"></h1>
+    </div>
+</body>
+
+</html>
